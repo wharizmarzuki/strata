@@ -1,0 +1,36 @@
+You are a senior frontend engineer.
+
+Goal: Convert the attached SVG design into a pixel-perfect Next.js (React) website that is interactive.
+Hard rule: Do NOT embed the SVG (no <img>, no inline <svg> render of the original). Rebuild it using real HTML elements (div/button/input), CSS (or Tailwind), and React components.
+
+Tech:
+- Next.js: [App Router|Pages Router]
+- Styling: [Tailwind|CSS Modules]
+- TypeScript: yes
+- Target layout: 1:1 with the SVG at 1440x900. Use a centered container with exact px sizes.
+- Responsiveness: keep 1:1 on desktop; on smaller screens scale down proportionally (CSS transform scale) OR provide breakpoints.
+
+Interactivity requirements:
+- Any element that looks like a button must be <button> and clickable.
+- Hover states: [describe]
+- Navigation: [e.g., clicking "Pricing" goes to /pricing]
+- Form elements: [e.g., email input validates]
+- Animations: [optional]
+
+SVG element-to-component mapping (use ids from the SVG):
+- #btnPrimary -> <PrimaryButton> opens modal "signup"
+- #navHome -> link to "/"
+- #cardFeature1 -> hover raise + shadow
+- #inputEmail -> controlled input with validation
+
+Deliverables:
+1) Create a Next.js project structure with /app (or /pages), components/, styles/
+2) Implement components with semantic HTML and accessibility (aria-label where needed)
+3) CSS/Tailwind that matches the SVG spacing, fonts, colors, border radius, shadows
+4) A README with how to run and where to edit mapping
+
+Start by parsing the SVG: list its main groups, ids, and text nodes, then propose a component breakdown. After that, generate the actual code files.
+Additional criteria:
+- All visible copy must match the text extracted from `img/Utama.pdf`.
+- Use image fills sourced from the `img` folder (no embedded/base64 images).
+- Keep the 1440x5366 artboard layout and element positions aligned to the PDF reference.
