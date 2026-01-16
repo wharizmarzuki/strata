@@ -1,33 +1,33 @@
 .viewport {
-  --scale: calc(100vw / 1440);
+  --scale: min(calc(100vw / 1440), calc(100vh / 5366));
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   background: var(--canvas-bg);
   padding: 0;
   width: 100%;
-  min-height: calc(5366px * var(--scale));
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
 .artboard {
   position: relative;
-  width: calc(1440px * var(--scale));
-  height: calc(5366px * var(--scale));
+  width: 1440px;
+  height: 5366px;
   background: var(--canvas-bg);
   overflow: hidden;
+  transform: scale(var(--scale));
+  transform-origin: top center;
 }
 
 .artboardInner {
   position: relative;
   width: 1440px;
   height: 5366px;
-  transform: scale(var(--scale));
-  transform-origin: top left;
 }
 
 @supports (zoom: 1) {
-  .artboardInner {
+  .artboard {
     zoom: var(--scale);
     transform: none;
   }
