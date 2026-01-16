@@ -44,7 +44,7 @@ export default function HomePage() {
             <nav className={styles.navLinks}>
               <NavLink id="navHome" href="/" label="Utama" />
               <NavLink href="/tentang-persatuan" label="Tentang Persatuan" />
-              <NavLink href="/panduan-penduduk" label="Panduan Penduduk" />
+            <NavLink href="/panduan-penduduk" label="Panduan Penduduk" />
               <NavLink href="/kutipan-sekuriti" label="Kutipan Sekuriti" />
               <NavLink href="/pengumuman" label="Pengumuman" />
               <NavLink href="/hubungi-kami" label="Hubungi Kami" />

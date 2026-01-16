@@ -1,0 +1,70 @@
+.viewport {
+  --scale: min(calc(100vw / 1440), calc(100vh / 1577));
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: var(--canvas-bg);
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.artboard {
+  position: relative;
+  width: 1440px;
+  height: 1577px;
+  transform: scale(var(--scale));
+  transform-origin: top center;
+}
+
+@supports (zoom: 1) {
+  .artboard {
+    zoom: var(--scale);
+    transform: none;
+  }
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 1077px;
+  background-image: url('/img/faq.svg');
+  background-size: 100% auto;
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
+.faqOption {
+  position: absolute;
+  left: 191px;
+  width: 1057px;
+  height: 92px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.faqOption:focus-visible {
+  outline: 2px solid #0a1833;
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+.optionOne {
+  top: 375px;
+}
+
+.optionTwo {
+  top: 497px;
+}
+
+.optionThree {
+  top: 630px;
+}
+
+.footerPlacement {
+  top: 1077px;
+}

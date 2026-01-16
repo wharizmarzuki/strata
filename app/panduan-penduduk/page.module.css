@@ -1,0 +1,65 @@
+.viewport {
+  --scale: min(calc(100vw / 1440), calc(100vh / 1351));
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: var(--canvas-bg);
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.artboard {
+  position: relative;
+  width: 1440px;
+  height: 1351px;
+  transform: scale(var(--scale));
+  transform-origin: top center;
+}
+
+@supports (zoom: 1) {
+  .artboard {
+    zoom: var(--scale);
+    transform: none;
+  }
+}
+
+.pageBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 1351px;
+  background-image: url('/img/panduan-penduduk.svg');
+  background-size: 100% 100%;
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
+.cardLink {
+  position: absolute;
+  width: 350px;
+  height: 218.502px;
+  border-radius: 16px;
+  text-decoration: none;
+}
+
+.cardLink:focus-visible {
+  outline: 2px solid #0a1833;
+  outline-offset: 4px;
+}
+
+.faqCard {
+  left: 972px;
+  top: 265px;
+}
+
+.tatacaraCard {
+  left: 118px;
+  top: 265px;
+}
+
+.footerPlacement {
+  top: 851px;
+}

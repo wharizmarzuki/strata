@@ -1,0 +1,42 @@
+.viewport {
+  --scale: min(calc(100vw / 1440), calc(100vh / 2250));
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: var(--canvas-bg);
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.artboard {
+  position: relative;
+  width: 1440px;
+  height: 2250px;
+  transform: scale(var(--scale));
+  transform-origin: top center;
+}
+
+@supports (zoom: 1) {
+  .artboard {
+    zoom: var(--scale);
+    transform: none;
+  }
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 1750px;
+  background-image: url('/img/bgimg5.png');
+  background-size: 100% 100%;
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
+.footerPlacement {
+  top: 1750px;
+}

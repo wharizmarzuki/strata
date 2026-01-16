@@ -1,0 +1,50 @@
+.viewport {
+  --scale: min(calc(100vw / 1440), calc(100vh / 2449));
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: var(--canvas-bg);
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.artboard {
+  position: relative;
+  width: 1440px;
+  height: 2449px;
+  transform: scale(var(--scale));
+  transform-origin: top center;
+}
+
+@supports (zoom: 1) {
+  .artboard {
+    zoom: var(--scale);
+    transform: none;
+  }
+}
+
+.cartaButton {
+  position: absolute;
+  left: 650px;
+  top: 540px;
+  width: 263px;
+  height: 53px;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 1949px;
+  background-image: url('/img/bgimg4.png');
+  background-size: 100% 100%;
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
+.footerPlacement {
+  top: 1949px;
+}
