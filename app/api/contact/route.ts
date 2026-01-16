@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
       from: 'Contact Form <onboarding@resend.dev>', // This must be a verified domain in Resend, 'onboarding@resend.dev' is for testing
       to: adminEmail,
       subject: `New Contact Form Submission: ${subject}`,
-      reply_to: email,
+      replyTo: email,
       html: `
         <p>You have received a new message from your website's contact form.</p>
         <p><strong>Name:</strong> ${name}</p>

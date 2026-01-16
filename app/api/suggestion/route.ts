@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
       from: 'Website Form <onboarding@resend.dev>',
       to: adminEmail,
       subject: `New ${type}: ${subject}`,
-      reply_to: contact || undefined,
+      replyTo: contact || undefined,
       html: `
         <p>You have received a new <strong>${type}</strong> from your website.</p>
         <hr>
