@@ -17,6 +17,8 @@ body {
   font-family: 'Trebuchet MS', 'Verdana', 'Tahoma', sans-serif;
   background: var(--canvas-bg);
   color: var(--ink);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 button {

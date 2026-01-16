@@ -1,9 +1,11 @@
 .viewport {
-  --scale: min(1, calc(100vw / 1440));
+  --scale: calc(100vw / 1440);
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   background: var(--canvas-bg);
-  padding: 24px 0 80px;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .artboard {
@@ -11,7 +13,7 @@
   width: 1440px;
   height: 5366px;
   transform: scale(var(--scale));
-  transform-origin: top center;
+  transform-origin: top left;
   background: var(--canvas-bg);
 }
 
@@ -60,8 +62,10 @@
   left: 0;
   width: 1440px;
   height: 1257px;
-  background: radial-gradient(circle at 50% 10%, #f9f5ff 0%, #f0e9ff 38%, #efe8ff 100%);
-  color: #1c2340;
+  background-image: url('/img/bg%20img1.png');
+  background-size: 100% 100%;
+  background-position: left top;
+  background-repeat: no-repeat;
 }
 
 .heroCopy {
@@ -299,7 +303,7 @@
 
 .tileA {
   left: 159px;
-  top: 2664px;
+  top: 244px;
   width: 350px;
   height: 240px;
 }
@@ -307,7 +311,7 @@
 .tileGradientA {
   position: absolute;
   left: 159px;
-  top: 2664px;
+  top: 244px;
   width: 350px;
   height: 240px;
   border-radius: 16px;
@@ -316,7 +320,7 @@
 
 .tileB {
   left: 545px;
-  top: 2664px;
+  top: 244px;
   width: 350px;
   height: 240px;
 }
@@ -324,7 +328,7 @@
 .tileGradientB {
   position: absolute;
   left: 545px;
-  top: 2664px;
+  top: 244px;
   width: 350px;
   height: 240px;
   border-radius: 16px;
@@ -333,7 +337,7 @@
 
 .tileC {
   left: 931px;
-  top: 2664px;
+  top: 244px;
   width: 350px;
   height: 240px;
 }
@@ -341,7 +345,7 @@
 .tileGradientC {
   position: absolute;
   left: 931px;
-  top: 2664px;
+  top: 244px;
   width: 350px;
   height: 240px;
   border-radius: 16px;
@@ -350,7 +354,7 @@
 
 .tileD {
   left: 352px;
-  top: 2934px;
+  top: 514px;
   width: 350px;
   height: 240px;
 }
@@ -358,7 +362,7 @@
 .tileGradientD {
   position: absolute;
   left: 352px;
-  top: 2934px;
+  top: 514px;
   width: 350px;
   height: 240px;
   border-radius: 16px;
@@ -367,7 +371,7 @@
 
 .tileE {
   left: 738px;
-  top: 2934px;
+  top: 514px;
   width: 350px;
   height: 240px;
 }
@@ -375,7 +379,7 @@
 .tileGradientE {
   position: absolute;
   left: 738px;
-  top: 2934px;
+  top: 514px;
   width: 350px;
   height: 240px;
   border-radius: 16px;
@@ -388,9 +392,10 @@
   left: 0;
   width: 1440px;
   height: 863px;
-  background: linear-gradient(180deg, #f4ecff 0%, #f7f1ff 100%);
-  color: #1c2340;
-  padding: 120px 160px 0;
+  background-image: url('/img/bg%20img2.png');
+  background-size: 100% 100%;
+  background-position: left top;
+  background-repeat: no-repeat;
 }
 
 .showcaseLarge {
@@ -435,8 +440,10 @@
   left: 0;
   width: 1440px;
   height: 720px;
-  background: white;
-  padding: 120px 160px 0;
+  background-image: url('/img/bg%20img3.png');
+  background-size: 100% 100%;
+  background-position: left top;
+  background-repeat: no-repeat;
 }
 
 .ctaOrbitLarge,

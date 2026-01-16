@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 
 import FeatureCard from '../components/FeatureCard';
 import ImageTile from '../components/ImageTile';
@@ -32,30 +32,8 @@ const featureCards = [
 
 const tabLabels = ['Pengumuman', 'Panduan Penduduk', 'Program', 'Borang Keahlian'];
 
-const heroAvatars = [
-  { image: '/img/image0_1_2.jpg', left: 298, top: 150 },
-  { image: '/img/image2_1_2.jpg', left: 1025, top: 170 },
-  { image: '/img/image3_1_2.png', left: 154, top: 590 },
-  { image: '/img/image1_1_2.jpg', left: 1330, top: 615 }
-];
-
-const ctaIcons = [
-  { image: '/img/image13_1_2.jpg', left: 328, top: 4281, label: 'Perumahan' },
-  { image: '/img/image14_1_2.jpg', left: 180, top: 4466, label: 'Komuniti' },
-  { image: '/img/image15_1_2.jpg', left: 328, top: 4662, label: 'Aktiviti' },
-  { image: '/img/image16_1_2.jpg', left: 1060, top: 4360, label: 'Rumah' },
-  { image: '/img/image17_1_2.jpg', left: 1160, top: 4598, label: 'Kalendar' }
-];
-
 export default function HomePage() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [email, setEmail] = useState('');
-  const [touched, setTouched] = useState(false);
-
-  const isValidEmail = useMemo(() => {
-    if (!email) return false;
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }, [email]);
 
   return (
     <div className={styles.viewport}>
@@ -73,26 +51,6 @@ export default function HomePage() {
         </header>
 
         <section className={styles.heroSection}>
-          {heroAvatars.map((avatar) => (
-            <div
-              key={avatar.image}
-              className={styles.heroAvatar}
-              style={{
-                backgroundImage: `url(${avatar.image})`,
-                left: avatar.left,
-                top: avatar.top
-              }}
-            />
-          ))}
-          <div className={styles.heroCopy}>
-            <h1>Komuniti Strata yang Lebih Terhubung & Terurus</h1>
-            <p className={styles.heroSubhead}>
-              The Strata menyatukan penduduk, pemilik, dan pengurusan dalam satu platform yang
-              memudahkan komunikasi, aduan, pengumuman, dan aktiviti komuniti — semua dalam satu
-              tempat.
-            </p>
-          </div>
-          <div className={styles.heroPhoto} role="img" aria-label="Komuniti The Strata" />
           <PrimaryButton
             id="btnPrimary"
             label="Baca Selanjutnya"
@@ -149,51 +107,9 @@ export default function HomePage() {
           <div className={styles.tileGradientE} />
         </section>
 
-        <section className={styles.showcaseSection}>
-          <ImageTile className={styles.showcaseLarge} image="/img/image11_1_2.png" alt="JagaAp 2.0" />
-          <div className={styles.showcaseCopy}>
-            <h2>Aplikasi JagaAp 2.0 untuk Komuniti Lebih Terhubung</h2>
-            <p>
-              Dapatkan notifikasi segera, buat aduan, akses pengumuman, dan urus keahlian terus
-              dari telefon anda.
-            </p>
-          </div>
-          <ImageTile className={styles.showcaseSmall} image="/img/image12_1_2.png" alt="Muat turun aplikasi" />
-        </section>
+        <section className={styles.showcaseSection} />
 
-        <section className={styles.ctaSection}>
-          <div className={styles.ctaOrbitLarge} />
-          <div className={styles.ctaOrbitSmall} />
-          {ctaIcons.map((icon) => (
-            <div
-              key={icon.label}
-              className={styles.ctaIcon}
-              style={{ backgroundImage: `url(${icon.image})`, left: icon.left, top: icon.top }}
-              aria-label={icon.label}
-            />
-          ))}
-          <div className={styles.ctaCallout}>
-            <h3>Komuniti, Tanpa Had</h3>
-            <PrimaryButton label="Daftar Sekarang" onClick={() => setModalOpen(true)} />
-          </div>
-          <div className={styles.ctaForm}>
-            <label className={styles.srOnly} htmlFor="inputEmail">
-              Daftar Sekarang
-            </label>
-            <input
-              id="inputEmail"
-              className={styles.ctaInputHidden}
-              type="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              onBlur={() => setTouched(true)}
-              aria-invalid={touched && !isValidEmail}
-            />
-            {touched && !isValidEmail ? (
-              <span className={styles.ctaError}>Sila masukkan emel yang sah.</span>
-            ) : null}
-          </div>
-        </section>
+        <section className={styles.ctaSection} />
 
         <footer className={styles.footer}>
           <div className={styles.footerLogo} role="img" aria-label="Persatuan Penduduk" />
