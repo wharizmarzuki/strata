@@ -2,19 +2,35 @@
   --scale: calc(100vw / 1440);
   display: flex;
   justify-content: flex-start;
+  align-items: flex-start;
   background: var(--canvas-bg);
   padding: 0;
   width: 100%;
+  min-height: calc(5366px * var(--scale));
   overflow-x: hidden;
 }
 
 .artboard {
   position: relative;
+  width: calc(1440px * var(--scale));
+  height: calc(5366px * var(--scale));
+  background: var(--canvas-bg);
+  overflow: hidden;
+}
+
+.artboardInner {
+  position: relative;
   width: 1440px;
   height: 5366px;
   transform: scale(var(--scale));
   transform-origin: top left;
-  background: var(--canvas-bg);
+}
+
+@supports (zoom: 1) {
+  .artboardInner {
+    zoom: var(--scale);
+    transform: none;
+  }
 }
 
 .navBar {
