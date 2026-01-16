@@ -595,6 +595,22 @@
   background-image: url('/img/image12_1_2.png');
   background-size: cover;
   background-position: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  position: relative;
+}
+
+.footerBadgeLink {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.footerBadgeLink:focus-visible {
+  outline: 2px solid #0a1833;
+  outline-offset: 4px;
+  border-radius: 10px;
 }
 
 .footerLinks ul {

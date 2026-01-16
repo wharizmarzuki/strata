@@ -1,0 +1,258 @@
+.viewport {
+  --scale: min(calc(100vw / 1440), calc(100vh / 3094));
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: var(--canvas-bg);
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.artboard {
+  position: relative;
+  width: 1440px;
+  transform: scale(var(--scale));
+  transform-origin: top center;
+}
+
+@supports (zoom: 1) {
+  .artboard {
+    zoom: var(--scale);
+    transform: none;
+  }
+}
+
+.pageBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 2594px;
+  background-image: url('/img/kutipan.svg');
+  background-size: 100% auto;
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
+.actionLink {
+  position: absolute;
+  width: 531px;
+  height: 78px;
+  border-radius: 12px;
+}
+
+.actionLink:focus-visible {
+  outline: 2px solid #0a1833;
+  outline-offset: 4px;
+}
+
+.actionDownload {
+  left: 459px;
+  top: 922px;
+}
+
+.actionView {
+  left: 457px;
+  top: 1027px;
+}
+
+.tableShell {
+  position: absolute;
+  left: 60.5px;
+  top: 1760px;
+  width: 1320px;
+  height: 760px;
+  background: #f8fafc;
+  border: 1px solid #94a3b8;
+  border-radius: 8px;
+  z-index: 1;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
+  display: grid;
+  grid-template-rows: 54px 1fr 52px;
+  overflow: hidden;
+}
+
+.tableTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px;
+  background: #eef2ff;
+  border-bottom: 1px solid #cbd5f5;
+}
+
+.tableSearch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tableSearchLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1f2937;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tableSearchInput {
+  width: 540px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid #cbd5f5;
+  padding: 0 16px;
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+  font-size: 13px;
+}
+
+.tableSearchInput:focus-visible {
+  outline: 2px solid #0a1833;
+  outline-offset: 2px;
+}
+
+.billTable {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 14px;
+  color: #111111;
+  text-align: center;
+}
+
+.billTable th:nth-child(1),
+.billTable td:nth-child(1) {
+  width: 18%;
+}
+
+.billTable th:nth-child(2),
+.billTable td:nth-child(2) {
+  width: 18%;
+}
+
+.billTable th:nth-child(3),
+.billTable td:nth-child(3) {
+  width: 32%;
+}
+
+.billTable th:nth-child(4),
+.billTable td:nth-child(4) {
+  width: 16%;
+}
+
+.billTable th:nth-child(5),
+.billTable td:nth-child(5) {
+  width: 16%;
+}
+
+.tableHeader {
+  background: #dbeafe;
+  border-bottom: 1px solid #94a3b8;
+  font-weight: 600;
+  color: #1e3a8a;
+  height: 56px;
+}
+
+.billRow {
+  height: 56px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.billRow:last-child {
+  border-bottom: none;
+}
+
+.billTable tbody tr:nth-child(even) {
+  background: #eef2ff;
+}
+
+.billTable tbody tr:hover {
+  background: #e0f2fe;
+}
+
+.billCell {
+  padding: 0 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.tableHeader th {
+  height: 56px;
+  padding: 0 12px;
+}
+
+.billCellEmpty {
+  text-align: center;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.billCellAmount {
+  text-align: center;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tablePagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #eef2ff;
+  border-top: 1px solid #cbd5f5;
+  padding: 0 16px;
+}
+
+.paginationButton {
+  border: 1px solid #cbd5f5;
+  background: #ffffff;
+  color: #1e3a8a;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.paginationButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.paginationStatus {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.statusPaid {
+  background: #bbf7d0;
+  color: #14532d;
+}
+
+.statusUnpaid {
+  background: #fecaca;
+  color: #7f1d1d;
+}
+
+.statusPartial {
+  background: #fde68a;
+  color: #92400e;
+}
+
+

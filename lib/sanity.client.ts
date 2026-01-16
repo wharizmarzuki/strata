@@ -1,0 +1,21 @@
+import { createClient } from 'next-sanity'
+
+export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
+export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
+
+if (!projectId) {
+  throw new Error('Missing NEXT_PUBLIC_SANITY_PROJECT_ID environment variable')
+}
+if (!dataset) {
+  throw new Error('Missing NEXT_PUBLIC_SANITY_DATASET environment variable')
+}
+
+// The API version to use. See docs: https://www.sanity.io/docs/api-versioning
+export const apiVersion = '2023-05-03'
+
+export const client = createClient({
+  projectId,
+  dataset,
+  apiVersion,
+  useCdn: process.env.NODE_ENV === 'production', // Use CDN in production
+})

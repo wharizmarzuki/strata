@@ -139,7 +139,22 @@ export default function HomePage() {
             </div>
             <div className={styles.footerDownload}>
               <h4>Muat Turun Applikasi JaGaAp 2.0</h4>
-              <div className={styles.footerBadges} role="img" aria-label="Muat turun aplikasi" />
+            <div className={styles.footerBadges} role="img" aria-label="Muat turun aplikasi">
+              <a
+                className={styles.footerBadgeLink}
+                href="https://play.google.com/store/apps/details?id=com.redideas.jagaapp"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Muat turun JagaApp 2.0 di Google Play"
+              />
+              <a
+                className={styles.footerBadgeLink}
+                href="https://apps.apple.com/my/app/jagaapp-2-0/id1518198706"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Muat turun JagaApp 2.0 di App Store"
+              />
+            </div>
             </div>
             <p className={styles.footerCopyright}>
               © 2025 Persatuan Penduduk The Strata Bandar Puteri Bangi.

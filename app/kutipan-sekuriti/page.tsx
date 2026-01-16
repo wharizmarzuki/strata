@@ -1,12 +1,30 @@
 import NavLink from '../../components/NavLink';
+import { client } from '../../lib/sanity.client';
+import { groq } from 'next-sanity';
+
+import KutipanTable from './KutipanTable';
+import type { Bill } from './types';
 import homeStyles from '../page.module.css';
 import styles from './page.module.css';
 
-export default function CartaOrganisasiPage() {
+const billsQuery = groq`
+  *[_type == "bill"] | order(houseNumber asc) {
+    _id,
+    houseNumber,
+    status,
+    tunggak,
+    amount,
+    balance
+  }
+`;
+
+export default async function KutipanSekuritiPage() {
+  const bills = await client.fetch<Bill[]>(billsQuery);
+
   return (
     <div className={styles.viewport}>
-      <section className={styles.artboard} aria-label="Carta Organisasi">
-        <div className={styles.heroBackground} role="presentation" />
+      <section className={styles.artboard} aria-label="Kutipan Sekuriti">
+        <div className={styles.pageBackground} role="presentation" />
         <header className={homeStyles.navBar}>
           <div className={homeStyles.navLogo} aria-label="Strata logo" />
           <nav className={homeStyles.navLinks}>
@@ -18,7 +36,22 @@ export default function CartaOrganisasiPage() {
             <NavLink href="/hubungi-kami" label="Hubungi Kami" />
           </nav>
         </header>
-        <footer className={`${homeStyles.footer} ${styles.footerPlacement}`}>
+        <a
+          className={`${styles.actionLink} ${styles.actionDownload}`}
+          href="https://play.google.com/store/apps/details?id=com.redideas.jagaapp"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Muat turun JagaApp 2.0 di Google Play"
+        />
+        <a
+          className={`${styles.actionLink} ${styles.actionView}`}
+          href="https://apps.apple.com/my/app/jagaapp-2-0/id1518198706"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Muat turun JagaApp 2.0 di App Store"
+        />
+        <KutipanTable bills={bills} />
+        <footer className={homeStyles.footer}>
           <div className={homeStyles.footerLogo} role="img" aria-label="Persatuan Penduduk" />
           <div className={homeStyles.footerCopy}>
             <p>
