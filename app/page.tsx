@@ -1,10 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 import FeatureCard from '../components/FeatureCard';
 import ImageTile from '../components/ImageTile';
-import Modal from '../components/Modal';
 import NavLink from '../components/NavLink';
 import PrimaryButton from '../components/PrimaryButton';
 import styles from './page.module.css';
@@ -33,7 +32,7 @@ const featureCards = [
 const tabLabels = ['Pengumuman', 'Panduan Penduduk', 'Program', 'Borang Keahlian'];
 
 export default function HomePage() {
-  const [modalOpen, setModalOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <div className={styles.viewport}>
@@ -56,7 +55,7 @@ export default function HomePage() {
               id="btnPrimary"
               label="Baca Selanjutnya"
               className={styles.heroButton}
-              onClick={() => setModalOpen(true)}
+              onClick={() => router.push('/tentang-persatuan')}
             />
           </section>
 
@@ -163,10 +162,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      <Modal title="Daftar" open={modalOpen} onClose={() => setModalOpen(false)}>
-        <p>Terima kasih. Kami akan hubungi anda dengan maklumat seterusnya.</p>
-        <PrimaryButton label="Tutup" onClick={() => setModalOpen(false)} />
-      </Modal>
     </div>
   );
 }

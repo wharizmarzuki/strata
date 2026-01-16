@@ -50,8 +50,10 @@ export default async function KutipanSekuritiPage() {
           rel="noreferrer"
           aria-label="Muat turun JagaApp 2.0 di App Store"
         />
-        <KutipanTable bills={bills} />
-        <footer className={homeStyles.footer}>
+        <div className={styles.content}>
+          <KutipanTable bills={bills} />
+        </div>
+        <footer className={`${homeStyles.footer} ${styles.footerPlacement}`}>
           <div className={homeStyles.footerLogo} role="img" aria-label="Persatuan Penduduk" />
           <div className={homeStyles.footerCopy}>
             <p>

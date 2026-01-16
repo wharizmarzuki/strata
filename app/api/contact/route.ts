@@ -6,10 +6,10 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, message } = await req.json();
+    const { name, email, subject, message } = await req.json();
 
     // Basic validation
-    if (!name || !email || !message) {
+    if (!name || !email || !subject || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
@@ -21,12 +21,13 @@ export async function POST(req: NextRequest) {
     const { data, error } = await resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>', // This must be a verified domain in Resend, 'onboarding@resend.dev' is for testing
       to: adminEmail,
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `New Contact Form Submission: ${subject}`,
       reply_to: email,
       html: `
         <p>You have received a new message from your website's contact form.</p>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
         <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
       `,

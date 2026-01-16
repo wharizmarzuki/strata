@@ -1,110 +1,166 @@
-/* Contact Page Styles */
 .page {
-  background-color: #f0f2f5;
-  min-height: 100vh;
+  min-height: 100dvh;
+  background: linear-gradient(110deg, #efe5ff 0%, #f6ebdd 50%, #f8f1e6 100%);
+  display: flex;
+  flex-direction: column;
 }
 
-.container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 40px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+.content {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 120px 24px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .title {
-  font-size: 28px;
+  margin: 0;
+  font-size: 18px;
   font-weight: 700;
-  margin-bottom: 24px;
-  color: #0a1833;
+  color: #2b2b2b;
 }
 
 .form {
   display: grid;
-  gap: 20px;
+  gap: 16px;
 }
 
 .formGroup {
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 
 .label {
+  font-size: 13px;
   font-weight: 600;
-  color: #333;
+  color: #3f3f46;
 }
 
 .input,
 .textarea {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #d1d7e6;
+  border: 1px solid #e4e4f2;
   border-radius: 8px;
+  background: #ffffff;
+  padding: 10px 12px;
   font-size: 14px;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  color: #111827;
 }
 
 .input:focus,
 .textarea:focus {
-  outline: none;
-  border-color: var(--button);
-  box-shadow: 0 0 0 3px rgba(124, 71, 206, 0.2);
+  outline: 2px solid #b6b4ff;
+  outline-offset: 2px;
 }
 
 .textarea {
+  min-height: 110px;
   resize: vertical;
-  min-height: 150px;
 }
 
-.button {
+.section {
   border: none;
-  background: var(--button);
-  color: #0a1833;
-  font-weight: 700;
-  font-size: 14px;
-  border-radius: 12px;
-  padding: 14px;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
 }
 
-.button:hover {
-  background: var(--button-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(20, 30, 70, 0.2);
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #3f3f46;
 }
 
+.radioList {
+  display: grid;
+  gap: 6px;
+}
 
-/* Copied from existing styles for consistency */
-.navBar {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background: white;
+.radioItem {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 60px;
-  z-index: 5;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  gap: 8px;
+  font-size: 13px;
+  color: #2b2b2b;
 }
 
-.navLogo {
-  width: 136px;
-  height: 54px;
-  background-image: url('/img/image18_1_2.png');
-  background-size: cover;
-  background-position: center;
+.fileRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fileButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #c9c6ff;
+  color: #2b2b2b;
+  font-size: 13px;
+  font-weight: 600;
   cursor: pointer;
 }
 
-.navLinks {
-  display: flex;
-  gap: 24px;
-  font-size: 14px;
+.fileName {
+  font-size: 12px;
+  color: #4b5563;
+}
+
+.fileInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+.submitButton {
+  width: min(220px, 100%);
+  margin: 0 auto;
+  border: none;
+  border-radius: 10px;
+  background: #c9c6ff;
+  color: #2b2b2b;
   font-weight: 600;
-  color: #0a1833;
+  font-size: 14px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(98, 89, 176, 0.2);
+}
+
+.status {
+  margin: 0;
+  font-size: 13px;
+  color: #1f2937;
+  text-align: center;
+}
+
+.helper {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+  color: #4b5563;
+}
+
+.footerFull {
+  width: 100%;
+  max-width: none;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 110px 20px 40px;
+  }
 }

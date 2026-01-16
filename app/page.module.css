@@ -13,7 +13,6 @@
 .artboard {
   position: relative;
   width: 1440px;
-  height: 5366px;
   background: var(--canvas-bg);
   overflow: hidden;
   transform: scale(var(--scale));
