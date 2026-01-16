@@ -155,6 +155,9 @@
 }
 
 .footerFull {
+  position: relative;
+  top: auto;
+  left: auto;
   width: 100%;
   max-width: none;
 }
